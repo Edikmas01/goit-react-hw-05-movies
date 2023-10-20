@@ -1,0 +1,14 @@
+.movie-details {
+  display: flex;
+  align-items: center;
+
+  .movie-details-image {
+    flex: 1;
+    padding-right: 10px; 
+  }
+
+  .movie-details-info {
+    flex: 2;
+  }
+ 
+}
