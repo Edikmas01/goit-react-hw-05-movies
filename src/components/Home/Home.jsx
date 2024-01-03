@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
-import './App.scss';
+import './Home.scss';
 import { Link } from 'react-router-dom';
 
-const movieId = '157336';
-export const App = () => {
+export const Home = () => {
+
   const API_KEY = 'f0069e3151b7ea61afff007960cd59b5';
   const URL = 'https://api.themoviedb.org/3';
-
   const [movies, setMovies] = useState([]);
 
   const loadMovies = async () => {
@@ -15,15 +14,14 @@ export const App = () => {
     );
 
     const data = await response.json();
-    console.log(data);
     setMovies(data.results);
   };
 
   useEffect(() => {
     loadMovies();
   }, []);
-
-  console.log('re-render', movies);
+  
+  
   return (
     <>
       <h1 className="trending__title">Trending movies</h1>

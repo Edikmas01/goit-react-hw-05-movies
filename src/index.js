@@ -4,13 +4,12 @@ import {
     createBrowserRouter,
     RouterProvider
 } from 'react-router-dom';
-
-import { Movie } from 'components/Movie/Movie';
-import './index.css';
 import { Layout } from 'components/Layout';
+import { MovieDetails } from 'components/MovieDetails/MovieDetails';
+import './index.css';
 import { Index } from 'routes';
-
-import { MoviesPage } from 'pages/MoviesPage';
+import { Movies } from 'components/Movies';
+import { Home } from 'components/Home';
 
 
 const router = createBrowserRouter([
@@ -20,15 +19,29 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Index />,
+        element: <Home />,
       },
       {
         path: '/movie',
-        element: <MoviesPage />,
-      },
-      {
-        path: '/movie/:movieId',
-        element: <Movie />,
+        children: [
+          {
+            index: true, 
+            element: <Movies />
+          },
+          {
+            path: ':movieId',
+            children: [
+              {
+                index: true,
+                element: <MovieDetails />
+              },
+              {
+                path: ':info',
+                element: <MovieDetails />
+              },
+            ],
+          },
+        ],
       },
     ],
   },

@@ -1,7 +1,5 @@
-import { App } from "components/App"
+import { Home } from 'components/Home';
 
 export const Index = () => {
-    return (
-        <App />
-    )
-}
+  return <Home />;
+};

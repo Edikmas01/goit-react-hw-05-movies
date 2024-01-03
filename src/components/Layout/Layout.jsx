@@ -6,8 +6,12 @@ export const Layout = () => {
     <>
       {' '}
       <header className="header">
-         <NavLink to="/" activeClassName="active">Home</NavLink>
-        <NavLink to="/movie" activeClassName="active">Movies</NavLink>
+        <NavLink to="/" activeClassName="active">
+          Home
+        </NavLink>
+        <NavLink to="/movie" activeClassName="active">
+          Movies
+        </NavLink>
       </header>
       <main className="container">
         <Outlet />
@@ -16,3 +20,6 @@ export const Layout = () => {
     </>
   );
 };
+{/* <NavLink to="/TrendingMovies" activeClassName="active">
+  Home
+</NavLink>; */}
